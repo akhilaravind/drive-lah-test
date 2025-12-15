@@ -1,6 +1,5 @@
-import DeviceManagement from "./OnBoarding/Component/DeviceManagement/DeviceManagement";
-
+import OnBoarding from "./OnBoarding";
 
 export {
-    DeviceManagement
+    OnBoarding
 }

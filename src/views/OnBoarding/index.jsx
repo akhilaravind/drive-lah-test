@@ -10,6 +10,7 @@ import { useQueryParams } from "../../hooks/useQueryParams";
 import { Button } from "../../components";
 import { FormValidityProvider, useFormValidity } from "../../context/FormValidityContext";
 import { FormActionProvider } from "../../context/FormActionContext";
+import Loader from "./Shared/Loader/Loader";
 
 const Subscription = lazy(() => import("./Component/Subscription/Subscription"))
 const DeviceManagement = lazy(() => import("./Component/DeviceManagement/DeviceManagement"))
@@ -69,7 +70,7 @@ export default function OnBoarding() {
                     <div className="flex gap-3">
                         <SideNav navVisited={navVisited} />
                         <FormValidityProvider>
-                            <Suspense fallback={'Loading....'}>
+                            <Suspense fallback={<Loader />}>
                                 <AnimatePresence mode="wait">
                                     {FormComponent ? (
                                         <motion.div

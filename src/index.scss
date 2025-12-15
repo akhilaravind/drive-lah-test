@@ -69,3 +69,27 @@ ul{
     }
   }
 }
+
+.not-found{
+  &__wrapper{
+    height: 70vh;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #ffff;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 40px;
+    h1{
+      font-size: 72px;
+      text-align: center;
+    }
+    h4{
+      text-align: center;
+    }
+    h5{
+      text-align: center;
+    }
+  }
+}
