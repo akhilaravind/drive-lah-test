@@ -1,7 +1,7 @@
 import { useState, useRef, Activity } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-import "./Dropdown.scss";
+import "./DropDown.scss";
 
 const Dropdown = ({ label = "Device", options = [], template }) => {
     const [isOpen, setIsOpen] = useState(false);
