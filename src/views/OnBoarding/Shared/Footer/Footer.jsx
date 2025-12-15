@@ -2,16 +2,21 @@ import { Button } from '@components'
 import './Footer.scss'
 // import { useFormValidity } from '../../../../context/FormValidityContext';
 import { useFormAction } from '../../../../context/FormActionContext';
+import toast from 'react-hot-toast';
 
 
 export default function Footer({ onNext }) {
-    // const { canProceed } = useFormValidity();
-
     const { triggerSubmit, isSubmitting } = useFormAction();
 
     const handleNext = async () => {
         const success = await triggerSubmit();
-        if (success) onNext();
+        if (success){
+            toast.success('Form valid, moving to next');
+            onNext();
+        }
+        else{
+            toast.error('Please fill all the fields to continue')
+        }
     };
 
     return (

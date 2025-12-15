@@ -15,14 +15,14 @@ export default function Subscription() {
 
     const [formData, setFormData] = useState(onBoardFormData.subscription)
 
-    const hasAddon = Boolean(formData.addon?.trim());
+    const hasAddon = Boolean(formData?.addon?.trim());
 
     const hasCardInfo =
-        formData.cardInfo.cardNumber.trim() !== "" &&
-        formData.cardInfo.expiry.trim() !== "" &&
-        formData.cardInfo.cvc.trim() !== "";
+        formData?.cardInfo?.cardNumber?.trim() !== "" &&
+        formData?.cardInfo?.expiry?.trim() !== "" &&
+        formData?.cardInfo?.cvc?.trim() !== "";
 
-    const hasPlan = formData.plan.trim() !== "";
+    const hasPlan = formData?.plan?.trim() !== "";
 
     const isValid = hasAddon ? hasCardInfo : hasPlan;
 
