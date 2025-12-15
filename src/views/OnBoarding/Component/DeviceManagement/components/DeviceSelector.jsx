@@ -5,10 +5,9 @@ import {
     FileUpload,
     AnimateHeight,
 } from "@components";
-import { useId, useState } from "react";
+import { useId } from "react";
 
-export default function DeviceSelector({ deviceId }) {
-    const [isBringDevice, setIsBringDevice] = useState(false);
+export default function DeviceSelector({ deviceId, deviceValue, onChange }) {
 
     // Accessible IDs
     const sectionId = useId();
@@ -24,7 +23,7 @@ export default function DeviceSelector({ deviceId }) {
                 variant="h5"
                 className="secondary font-22"
             >
-                Device {deviceId}
+                Device {deviceId+1}
             </Typography>
 
             <div className="type-selector">
@@ -32,8 +31,11 @@ export default function DeviceSelector({ deviceId }) {
                     {/* Device Type */}
                     <TextInput
                         label="Device Type"
-                        placeholder=""
+                        name="deviceType"
+                        placeholder="Enter device type"
                         aria-required="true"
+                        value={deviceValue?.deviceType ?? ''}
+                        onChange={(e)=>onChange({'deviceType': e.target.value})}
                     />
 
                     {/* Bring Your Own Device */}
@@ -44,10 +46,11 @@ export default function DeviceSelector({ deviceId }) {
                             </Typography>
 
                             <Switch
-                                checked={isBringDevice}
-                                onChange={setIsBringDevice}
+                                checked={!!deviceValue?.isBringDevice}
+                                onChange={(value)=>onChange({'isBringDevice': value})}
                                 aria-describedby={toggleDescId}
-                                aria-expanded={isBringDevice}
+                                aria-expanded={!!deviceValue?.isBringDevice}
+                                name="isBringDevice"
                             />
                         </div>
 
@@ -63,7 +66,7 @@ export default function DeviceSelector({ deviceId }) {
                 </div>
 
                 {/* Conditional Section */}
-                <AnimateHeight open={isBringDevice}>
+                <AnimateHeight open={!!deviceValue?.isBringDevice}>
                     <div
                         className="grid"
                         role="region"
@@ -72,10 +75,13 @@ export default function DeviceSelector({ deviceId }) {
                         <TextInput
                             label="Serial Number"
                             placeholder="Enter the serial number of the device"
+                            name="deviceSerialNo"
+                            value={deviceValue?.deviceSerialNo ?? ''}
+                            onChange={(e)=>onChange({'deviceSerialNo': e.target.value})}
                         />
 
                         <div className="device-option">
-                            <FileUpload label="Upload an image of the device" />
+                            <FileUpload label="Upload an image of the device" value={deviceValue?.deviceImage ?? ''} onChange={(file) => onChange('deviceImage', file)} />
                         </div>
                     </div>
                 </AnimateHeight>

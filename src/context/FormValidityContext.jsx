@@ -10,7 +10,7 @@ const defaultForm = {
                     cvc:''
                 }
             },
-        device:{}
+        device:[]
     }
 
 const FormValidityContext = createContext({
