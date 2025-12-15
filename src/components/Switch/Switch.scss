@@ -1,0 +1,39 @@
+.switch {
+    width: 44px;
+    height: 22px;
+    border-radius: 999px;
+    background-color: $border-color; // off state
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+
+    &:focus,
+    &:focus-visible {
+        box-shadow: 0 0 0 1px $primary-500;
+    }
+
+    &__thumb {
+        width: 18px;
+        height: 18px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+    }
+
+    &--on {
+        background-color: $primary-color;
+
+        .switch__thumb {
+            transform: translateX(22px);
+        }
+    }
+
+    &--disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,55 @@
+.device-management {
+   
+    &__form{
+        width: 100%;
+        background-color: $bg-white;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        @media (max-width: $break-xs) {
+            margin-left: 0;
+        }
+        .management__header{
+             padding: 30px 40px 20px 40px;
+            @media (max-width: $break-xs) {
+                padding: 10px 24px;
+                .typography--h2{
+                    font-size: 28px;
+                    ~.typography--h5{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Device selector section
+    &__device-selector{
+        padding: 40px 24px;
+        @media (max-width: $break-xs) {
+            padding: 15px 24px;
+        }
+        .type-selector{
+            .grid{
+                margin-top: 20px;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                display: grid;
+                gap: 20px;
+                transition: height 0.5s ease;
+                @media (max-width: 920px) {
+                    grid-template-columns:1fr;
+                    gap: 15px;
+                    margin-top: 15px;
+                }
+                &.hidden{
+                    height: 0;
+                    overflow: hidden;
+                }
+                &.visible{
+                    height: 200px;
+                    transition: height 0.5s ease;
+                }
+            }
+        }
+    }
+}

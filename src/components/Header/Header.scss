@@ -1,0 +1,118 @@
+/* ============================
+   Header.scss
+   ============================ */
+.header {
+    background: $primary-color;
+    color: #ffffff;
+    padding: 12px 24px;
+    position: relative;
+    max-height: 73px;
+    position: sticky;
+    top: 0;
+
+    &__container {
+        // max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+            height: 27px;
+            width: 156x;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    &__nav__group {
+        display: flex;
+        align-items: center;
+        gap: 37px;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 40px;
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__avatar {
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__menu-btn {
+        display: none;
+        font-size: 2.2em;
+        background: none;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header {
+        &__menu-btn {
+            display: block;
+        }
+
+        &__nav {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: #159ca7;
+            flex-direction: column;
+            display: none;
+
+            a {
+                padding: 14px 24px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            &.is-open {
+                display: flex;
+            }
+        }
+
+        &__logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            img {
+                height: 30px;
+                width: 150px;
+            }
+        }
+
+        &__avatar {
+            order: 2;
+        }
+    }
+}

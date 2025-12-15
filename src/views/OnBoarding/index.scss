@@ -1,0 +1,37 @@
+.onboard-management{
+     &-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 92svh;
+        align-items: center;
+        >.container {
+            flex: 1;
+            padding-top: 67px;
+            
+            @media (max-width: $break-sm) {
+                padding-top: 20px;
+            }
+            >.flex{
+                @media (max-width: $break-xs) {
+                    flex-direction: column;
+                    .dropdown {
+                        position: sticky;
+                        top: 71px;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.empty-state{
+    display: flex;
+    min-height: 80vh;
+    border: 1px solid $background-grey-400;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 450px);
+}

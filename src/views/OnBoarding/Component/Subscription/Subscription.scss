@@ -1,0 +1,113 @@
+.subscription-management{
+    &__form{
+        width: 100%;
+        background-color: $bg-white;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        @media (max-width: $break-xs) {
+            margin-left: 0;
+        }
+
+        .plan-item{
+            &__wrapper{
+                flex: 1 1 auto;
+                border: 1px solid $border-color;
+                border-radius: 8px;
+                background-color: $background-grey-200;
+                max-height: 600px;
+                // max-width: 297px;
+                padding: 15px;
+                cursor: pointer;
+                h5{
+                    letter-spacing: 0px;
+                }
+                transition: .3s ease-in-out;
+                &:hover, &.selected{
+                    transition: .3s ease-in-out;
+                    background-color: $primary-200;
+                    border-color: $primary-color;
+                }
+            }
+            &__features{
+                ul{
+                    margin-top: 10px;
+                    li{
+                        display: grid;
+                        grid-template-columns: 20px auto;
+                        align-self: center;
+                        line-height: 1;
+                        margin-bottom: 10px;
+                        p{
+                            line-height: 1;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .management__header{
+            padding: 30px 40px 20px 40px;
+            @media (max-width: $break-xs) {
+                padding: 10px 24px;
+                .typography--h2{
+                    font-size: 28px;
+                    ~.typography--h5{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    &__info, &__addons, &__payment{
+        padding: 20px 40px;
+        @media (max-width: $break-xs) {
+            padding: 10px 24px;
+        }
+    }
+    &__plan-selector{
+        padding: 20px 40px;
+        @media (max-width: $break-xs) {
+            padding: 10px 24px;
+        }
+        .plan-selector{
+            margin-top: 10px;
+            .grid{
+                display: flex;
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+
+    // Addons
+    &__addons{
+        padding-top: 20px;
+        h5{
+            line-height: 1;             
+        }
+        &__option{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            @media (max-width: $break-xs) {
+                flex-direction: column;
+                .radio-card{
+                    &:first-child{
+                        width: 100%!important;
+                    }
+                }
+            }
+        }
+    }
+
+    // Payment
+    &__payment{
+        h5{
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+    }
+}

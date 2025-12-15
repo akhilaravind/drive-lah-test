@@ -1,0 +1,38 @@
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+
+    &__label {
+        font-size: 16px;
+        color: #374151;
+        font-weight: 500;
+    }
+
+    &__box {
+        height: 140px;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-color: $primary-500;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        color: $primary-color;
+        font-weight: 600;
+
+        &:hover {
+            color: $primary-500;
+        }
+    }
+}

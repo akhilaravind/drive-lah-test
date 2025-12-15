@@ -1,0 +1,23 @@
+.device-management{
+    &__footer{
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        background-color: $bg-white;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px -3px 6px #00000014;
+        .container{
+            display: flex;
+            button{
+                margin-left: auto;
+                width: 300px;
+                @media (max-width:$break-xxs) {
+                    width: 100%!important;
+                }
+            }
+        }
+    }
+}

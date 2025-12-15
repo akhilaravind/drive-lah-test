@@ -1,0 +1,63 @@
+.cc-wrapper {
+    height: auto;
+}
+
+.cc-input {
+    height: 52px;
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    padding: 17px 20px;
+    line-height: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    box-sizing: border-box;
+    &:focus-within {
+        border-color: #14b8a6;
+        box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.4);
+    }
+}
+
+.cc-icon {
+    filter: grayscale(100%) brightness(1);
+}
+
+.cc-input input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: $color-grey-400;
+
+    &::placeholder {
+        color: $font-light;
+    }
+}
+
+.input-group{
+    display: flex;
+    width: 100%;
+    .cc-number {
+        flex: 1.4;
+        width: 100%;
+    }
+    
+    .cc-expiry {
+        width: 60px;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    
+    .cc-cvc {
+        width: 40px;
+        margin-left: auto;
+    }
+}
+
+.cc-hint {
+    margin-top: 8px;
+    font-size: 13px;
+    color: $font-light;
+}
