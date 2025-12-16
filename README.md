@@ -1,16 +1,100 @@
-# React + Vite
+# Frontend Developer Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo
+🔗 cheerful-muffin-124438.netlify.app
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+This project is a responsive frontend application built using **React + Vite + JavaScript + SCSS**.  
+The UI is implemented based on the provided Adobe XD designs for desktop and mobile views.  
+All application data is stored and persisted using **browser Local Storage**.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Tech Stack
+- React (Vite)
+- JavaScript (ES6+)
+- SCSS
+- Local Storage
+- Playwright (E2E Testing)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- Pixel-accurate UI based on XD designs
+- Fully responsive (desktop & mobile)
+- Local Storage based data persistence
+- Smooth interactions and transitions
+- Accessible and keyboard friendly
+- Cross-browser compatible
+
+---
+
+## Setup Instructions
+
+```
+git clone https://github.com/akhilaravind/drive-lah-test
+cd drive-lah-test
+npm install
+npm run dev
+```
+
+## Build
+```
+npm run build
+npm run preview
+```
+
+## End-to-End Testing (Playwright)
+Install
+```
+npm install -D @playwright/test
+npx playwright install
+```
+
+## Run Tests
+```
+npx playwright test
+npx playwright test --ui
+npx playwright show-report
+```
+
+## Playwright Configuration
+`playwright.config.js`
+
+```
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
+  timeout: 30000,
+  retries: 1,
+
+  use: {
+    baseURL: 'http://localhost:5173',
+    headless: true,
+    viewport: { width: 1280, height: 800 },
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+
+  projects: [
+    { name: 'Chromium', use: { browserName: 'chromium' } },
+    { name: 'Firefox', use: { browserName: 'firefox' } },
+    { name: 'WebKit', use: { browserName: 'webkit' } },
+  ],
+
+  webServer: {
+    command: 'npm run dev',
+    port: 5173,
+    reuseExistingServer: true,
+  },
+});
+```
+
+## Assumptions
+
+- No backend integration required
+- Local Storage used as the primary data source
+- No external UI libraries used
