@@ -1,7 +1,7 @@
 # Frontend Developer Assignment
 
 ## Live Demo
-🔗 cheerful-muffin-124438.netlify.app
+🔗 [cheerful-muffin-124438.netlify.app](cheerful-muffin-124438.netlify.app)
 
 ---
 
