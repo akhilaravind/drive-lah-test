@@ -23,12 +23,12 @@ const sidebarItems = [
 export default function SideNav({navVisited}) {
     const navigate = useNavigate();
     const location = useLocation();
-    const view = useQueryParams('view')
+    const view = useQueryParams('view');
 
     const width = useViewportWidth();
     const isMobile = width < 768;
 
-    const handleActiveMenuSelection = (menuItem) => {
+    const handleActiveMenuSelection = async(menuItem) => {
         // Update the query param `view` without reloading
         const searchParams = new URLSearchParams(location.search);
         searchParams.set('view', menuItem.toLowerCase());

@@ -67,7 +67,7 @@ npx playwright show-report
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src/e2e/',
   timeout: 30000,
   retries: 1,
 

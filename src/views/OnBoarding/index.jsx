@@ -90,6 +90,7 @@ export default function OnBoarding() {
                                     key="fallback"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
+                                    style={{flex:1}}
                                 >
                                     <div className="empty-state">
                                         <Typography variant="h2" className="primary">No content</Typography>
